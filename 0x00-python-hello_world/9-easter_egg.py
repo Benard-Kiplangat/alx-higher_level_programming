@@ -1,2 +1,2 @@
-#!/bin/bash
-python3 zen.py
+#!/usr/bin/python3
+import this
