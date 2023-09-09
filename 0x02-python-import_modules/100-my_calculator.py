@@ -8,16 +8,16 @@ def arg_calc(argv):
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     a = int(argv[1])
-    operator = argv[2]
+    opr = argv[2]
     b = int(argv[3])
-    if operator == '+':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, add(a, b)))
-    elif operator == '-':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, sub(a, b)))
-    elif operator == '*':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, mul(a, b)))
-    elif operator == '/':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, div(a, b)))
+    if opr == '+':
+        print("{:d} {:s} {:d} = {:d}".format(a, opr, b, add(a, b)))
+    elif opr == '-':
+        print("{:d} {:s} {:d} = {:d}".format(a, opr, b, sub(a, b)))
+    elif opr == '*':
+        print("{:d} {:s} {:d} = {:d}".format(a, opr, b, mul(a, b)))
+    elif opr == '/':
+        print("{:d} {:s} {:d} = {:d}".format(a, opr, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
