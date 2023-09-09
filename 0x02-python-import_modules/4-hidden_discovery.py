@@ -1,6 +1,13 @@
 #!/usr/bin/python3
-import c
-for i in c:
-    if "__" in i:
-        continue
-    print(f"{i}")
+import hidden_4
+
+
+def finders():
+    dirname = dir(hidden_4)
+    for i in name:
+        if i[:2] != '__':
+            print("{:s}".format(i))
+
+
+if __name__ == "__main__":
+    finders()
