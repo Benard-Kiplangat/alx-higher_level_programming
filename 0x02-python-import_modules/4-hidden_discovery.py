@@ -4,7 +4,7 @@ import hidden_4
 
 def finders():
     dirname = dir(hidden_4)
-    for i in name:
+    for i in dirname:
         if i[:2] != '__':
             print("{:s}".format(i))
 
