@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 def element_at(my_list, idx):
     """a scritp that retrieves an element in a list
 
@@ -10,8 +11,7 @@ def element_at(my_list, idx):
     if my_list:
         if idx < 0:
             return
-        num = len(my_list) - 1
-        elif idx > num:
+        elif idx > (len(my_list) - 1):
             return
         else:
             return (my_list[idx])
