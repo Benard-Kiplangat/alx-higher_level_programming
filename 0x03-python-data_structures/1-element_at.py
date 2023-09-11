@@ -1,8 +1,17 @@
 #!/usr/bin/python3
 def element_at(my_list, idx):
-    if idx < 0:
-        return (None)
-    num = len(my_list)
-    if idx > num:
-        return (None)
-    return (my_list[idx])
+    """a scritp that retrieves an element in a list
+
+    If idx is negative, the function should return None
+    If idx is out of range (> of number of element in my_list), return None
+    You are not allowed to import any module
+    You are not allowed to use try/except
+    """
+    if my_list:
+        if idx < 0:
+            return
+        num = len(my_list) - 1
+        elif idx > num:
+            return
+        else:
+            return (my_list[idx])
