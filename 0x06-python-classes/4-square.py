@@ -10,6 +10,7 @@ class Square:
             size (int): The size to define the size of the new squares
         """
         self.set_size(size)
+
     def set_size(self, size):
         """A setter to set size"""
         if not isinstance(size, int):
@@ -18,8 +19,10 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.size = size
+
     def get_size(self):
         return self.size
+
     def area(self):
         """Calculates the area of the square"""
         return self.size * self.size
