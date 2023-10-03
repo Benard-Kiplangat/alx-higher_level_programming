@@ -1,0 +1,221 @@
+# The ``0-add_integer`` module
+=============================
+How to use 0-add_integer.py
+=============================
+
+Has one function called ``add_integer()``
+Args: Numbers
+=============
+
+The ``add_integer()`` returns the sum of its arguments.
+The first argument is mandatory while the second is optional
+with the default argument is 98.
+For numbers, the return value is equivalent to
+using the ``+`` operator on both arguments:
+
+Importing the function add_integer:
+    >>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(5, 6)
+	11
+
+Args: Non-Numbers
+=================
+
+Because add_integer() doesn't take non-numbers,
+it should throw an error. Here's how it behaves if a non-number
+is passed as one of its arguments:
+
+Adding an integer and a float:
+
+	>>> add_integer(5, 6.0) #doctest: +REPORT_NDIFF
+	11
+
+Passing a as float and b as an integer:
+	>>> add_integer(6.0, 5)
+	11
+
+Passing one argument:
+    >>> add_integer(5)
+    103
+
+Passing a as positive int and b as negative int:
+    >>> add_integer(5, -6)
+    -1
+
+Passing a as negative int and b as positive int:
+    >>> add_integer(-6, 5)
+    -1
+
+Passing a as an integer and b as a boolean:
+    >>> add_integer(5, True)
+    6
+
+Passing a as a bool and b as an int:
+    >>> add_integer(True, 5)
+    6
+
+Passing both boolean values:
+    >>> add_integer(False, True)
+    1
+
+Adding two booleans:
+    >>> add_integer(True, True)
+    2
+
+Passing one bool argument:
+    >>> add_integer(False)
+    98
+
+passing a bool and an int:
+    >>> add_integer(False, 5)
+    5
+
+Passing two float values:
+    >>> add_integer(5.0, 6.0) #doctest: +REPORT_NDIFF
+    12
+
+Passing two float values:
+    >>> add_integer(5.6, 6.0) #doctest: +REPORT_NDIFF
+    11
+
+Passing two float values:
+    >>> add_integer(5.6, 6.5)
+    11
+
+Passing None as the only argument:
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Passing an integer and None:
+    >>> add_integer(5, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Passing a string and an integer:
+	>>> add_integer('a', 5)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Passing a tuple and integer:
+	>>> add_integer((), 5)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Passing a set and an integer:
+	>>> add_integer({}, 5)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Passing a list and an int:
+    >>> add_integer([], 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Passing an integer and a string:
+	>>> add_integer(6, '5')
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+Passing an integer and a tuple:
+	>>> add_integer(5, ())
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+Passing an integer and a set:
+	>>> add_integer(5, {})
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+Passing an integer and a set:
+    >>> add_integer(5, [])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Passing a tuple as the only argument:
+    >>> add_integer((6, 5))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Passing a nan and an int:
+    >>> add_integer(float("nan"), 4)
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+Passing an integer and a nan:
+    >>> add_integer(5, float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+Passing an integer and a positive undefined number.
+    >>> add_integer(5, float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+Passing an integer and a negative undefined numbeR:
+    >>> add_integer(5, float('-inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+Passing a positive undefined number and an int:
+    >>> add_integer(float('inf'), 5)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+Passing a negative undefined number and an integer.
+    >>> add_integer(float('-inf'), 5)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+Passing too many arguments:
+	>>> add_integer(1, 2, 3, 4)
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() takes from 1 to 2 positional arguments but ...
+
+Passing only the second argument:
+    >>> add_integer(, 5)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+Passing only a symbol:
+    >>> add_integer(|)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+Passing only a symbol:
+    >>> add_integer(;)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+Passing an undefined variable:
+    >>> add_integer(b)
+    Traceback (most recent call last):
+        ...
+    NameError: name ... is not defined
+
+Passing 0 arguments:
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
