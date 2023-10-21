@@ -56,3 +56,81 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
+
+    @property
+    def height(self):
+        """A function that retrieves the width of the rectangle
+
+            Returns:
+                height (int): the height of the rectangle
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """A function that sets the width of the rectangle
+
+            Arguments:
+                value (int): the value of rectangle's height to set
+
+            Raises:
+                TypeError: raised when height is not an int
+                ValueError: raised when height is negative or 0
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("heigh must be > 0")
+        self.__height = value
+
+    @property
+    def x(self):
+        """A function that retrives the x coodinate of the rectangle
+
+        Returns:
+            x (int): the value of x coordinate
+        """
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """A function that sets the value of x
+
+        Arguments:
+            value (int): the value of the x coordinate
+
+        Raises:
+            TypeError: raised if x is not an integer
+            ValueError: raised if x is less than or equal to zero
+        """
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
+
+    @property
+    def y(self):
+        """A function that retrives the value of y coordinate
+
+        Returns:
+            (y) int: the value of y coordinate
+        """
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """A fucntion that sets the value of the y coordinate
+
+        Arguments:
+            value (int): the value of y coordinate of the rectangle
+
+        Raises:
+            TypeError: raised if y is not an int
+            ValueError: raised if y is less than or equal to zero
+        """
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
