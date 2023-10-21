@@ -143,6 +143,14 @@ class Rectangle(Base):
         """
         return self.__width * self.__height
 
+    def __str__(self):
+        """A function that overrides the __str__ method
+        and prints the properties of the rectangle
+        """
+        return ("[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".
+                format(self.id, self.__x, self.__y, self.__width,
+                       self.__height))
+
     def display(self):
         """A function that prints an instance of rectangle with #"""
         if self.__y > 0:
@@ -154,4 +162,32 @@ class Rectangle(Base):
                     print(" " * self.__x, end = "")
                 print("#", end = "")
             print("")
+    def update(self, *args, **kwargs):
+        """A function that updates properties with *args
 
+            Arguments:
+                *args (tuple): the list of non-keyworded argumensts
+                **kwargs (dict): a dictionary of keyworded arguments
+        """
+
+        if args is not None and len(args) != 0:
+            attribs = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, attribs[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+    def to_dictionary(self):
+        """A function that creates a dictionary representation
+        of a Rectangle
+
+        Returns:
+            dict (dictionary) : the properties of a rectangle
+        """
+        dict = {}
+        dict["id"] = self.id
+        dict["width"] = self.width
+        dict["height"] = self.height
+        dict["x"] = self.x
+        dict["y"] = self.y
+        return (dict)
