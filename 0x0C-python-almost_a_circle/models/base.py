@@ -7,6 +7,7 @@ class Base:
     A base class for Rectangle and Square objects
     """
     __nb_objects = 0
+
     def __init__(self, id=None):
         """A class constructor for the Base class"""
         if id is not None:

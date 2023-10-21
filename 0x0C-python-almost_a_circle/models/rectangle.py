@@ -8,7 +8,7 @@ from models.base import Base
 class Rectangle(Base):
     """
     Rectangle is a Class that defines the properties of a Rectangle
-    
+
     Attributes:
         width (int): the width
         height (int): the height
@@ -159,9 +159,10 @@ class Rectangle(Base):
         for i in range(self.__height):
             for j in range(self.__width):
                 if j == 0:
-                    print(" " * self.__x, end = "")
-                print("#", end = "")
+                    print(" " * self.__x, end="")
+                print("#", end="")
             print("")
+
     def update(self, *args, **kwargs):
         """A function that updates properties with *args
 
@@ -177,6 +178,7 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
     def to_dictionary(self):
         """A function that creates a dictionary representation
         of a Rectangle

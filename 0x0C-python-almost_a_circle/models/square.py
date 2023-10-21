@@ -10,7 +10,7 @@ class Square(Rectangle):
     """
     Square is a Class that defines the properties of a square
     based on the class Rectangle
-    
+
     Attributes:
         size (int): the width of the square
         x (int): x coordinates of the square
@@ -57,7 +57,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """A function that overrides the __str__ method
-        and prints the properties of the square 
+        and prints the properties of the square
         """
         return ("[Square] ({}) {:d}/{:d} - {:d}".
                 format(self.id, self.x, self.y, self.size))
