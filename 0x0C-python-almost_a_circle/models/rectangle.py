@@ -31,3 +31,28 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
+
+    @property
+    def width(self):
+        """A function that retrieves the width property
+
+            Returns: (int) the width of the rectangle
+        """
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """A function that sets the width of the rectangle
+
+        Arguments:
+            value (int): the value of the width to set to
+
+        Raises:
+            TypeError: raised when width is not an int
+            ValueError: raised when width is 0 or negative
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
