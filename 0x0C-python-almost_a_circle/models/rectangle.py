@@ -145,7 +145,13 @@ class Rectangle(Base):
 
     def display(self):
         """A function that prints an instance of rectangle with #"""
+        if self.__y > 0:
+            for i in range(self.__y):
+                print()
         for i in range(self.__height):
             for j in range(self.__width):
+                if j == 0:
+                    print(" " * self.__x, end = "")
                 print("#", end = "")
             print("")
+
