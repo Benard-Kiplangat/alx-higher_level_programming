@@ -79,7 +79,7 @@ class Rectangle(Base):
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if height <= 0:
+        if value <= 0:
             raise ValueError("heigh must be > 0")
         self.__height = value
 
@@ -134,3 +134,18 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """A function that calculates the area of the rectangle
+
+        Returns:
+            area (int): the area of the rectangle
+        """
+        return self.__width * self.__height
+
+    def display(self):
+        """A function that prints an instance of rectangle with #"""
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print("#", end = "")
+            print("")
