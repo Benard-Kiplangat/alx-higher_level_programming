@@ -3,7 +3,6 @@
 import json
 import os.path
 import csv
-import turtle
 
 
 class Base:
@@ -142,3 +141,25 @@ class Base:
         except(Exception):
             pass
         return(my_obj)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """A method that writes a JSON string representation of list_objs
+        to a file
+
+        Arguments:
+            list_objs (list): the list instances that inherits from Base class
+        """
+        filename = "{}.json".format(cls.__name__)
+        list_dic = []
+
+        if not list_objs:
+            pass
+        else:
+            for i in range(len(list_objs)):
+                list_dic.append(list_objs[i].to_dictionary())
+
+        lists = cls.to_json_string(list_dic)
+
+        with open(filename, 'w') as f:
+            f.write(lists)
