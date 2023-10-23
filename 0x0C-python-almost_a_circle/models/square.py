@@ -93,10 +93,10 @@ class Square(Rectangle):
         Returns:
             dict (dictionary) : the properties of the Square
         """
+        dict1 = {}
         dictsqr = self.__dict__
-        dict1["id"] = dictsqr['id']
-        dict1["width"] = dictsqr['width']
-        dict1["height"] = dictsqr['height']
-        dict1["x"] = dictsqr['x']
-        dict1["y"] = dictsqr['y']
+        dict1['id'] = dictsqr['id']
+        dict1['size'] = dictsqr['_Rectangle__width']
+        dict1['x'] = dictsqr['_Rectangle__x']
+        dict1['y'] = dictsqr['_Rectangle__y']
         return (dict1)
