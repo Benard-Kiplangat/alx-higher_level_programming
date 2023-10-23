@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 """A base clase for the Rectangle and Square objects"""
+import json
+import os.path
+import csv
+import turtle
 
 
 class Base:
