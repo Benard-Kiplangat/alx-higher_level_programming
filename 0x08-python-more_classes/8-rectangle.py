@@ -19,7 +19,7 @@ class Rectangle:
         type(self).number_of_instances += 1
         self.height = height
         self.width = width
-    
+
     print_symbol = "#"
 
     @property
@@ -134,7 +134,8 @@ class Rectangle:
             rect_1 (Rectangle): the first rectangle to compare
             rect_2 (Rectangle): the second rectangle to compare
 
-        Returns: the rectangle with the biggest area or rect_1 if both are equal
+        Returns: the rectangle with the biggest area or
+        rect_1 if both are equal
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
