@@ -12,6 +12,4 @@ myNum.sort();
 console.log(myNum);
 myNum.reverse();
 console.log(myNum);
-if (myNum[0] === undefined) { console.log(0); }
-else if (myNum.length === 1) { console.log(0); }
-else console.log(myNum[1]);
+if (myNum[0] === undefined) { console.log(0); } else if (myNum.length === 1) { console.log(0); } else console.log(myNum[1]);
