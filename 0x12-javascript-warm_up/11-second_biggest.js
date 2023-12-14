@@ -8,7 +8,7 @@ for (let i = 2; process.argv[i]; i++) {
   myNum[i - 2] = parseInt(process.argv[i]);
 }
 console.log(myNum);
-myNum.sort();
+myNum.sort((a, b) => a - b);
 console.log(myNum);
 myNum.reverse();
 console.log(myNum);
