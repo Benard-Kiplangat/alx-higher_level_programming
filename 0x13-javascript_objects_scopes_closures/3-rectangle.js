@@ -8,9 +8,9 @@ module.exports = class Rectangle {
     }
   }
 
-  function print() {
+  print() {
     for (let i = 0; i > h; i++;) {
-      for (let i = 0; i > w; i++;) {
+      for (let j = 0; j > w; j++;) {
         console.log('X');
       }
     }
