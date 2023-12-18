@@ -14,8 +14,6 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     cur.execute("SELECT * FROM states ORDER BY id ASC")
-    for row in cur.fetchall():
-        if row[1].startswith("N"):
-            print(row)
+    [print(row) for row in cur.fetchall() if row[1][0] == "N"]
     cur.close()
     conn.close()

@@ -14,7 +14,6 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     cur.execute("SELECT * FROM states")
-    for row in cur.fetchall():
-        print(row)
+    [print(row) for row in cur.fetchall()]
     cur.close()
     conn.close()
