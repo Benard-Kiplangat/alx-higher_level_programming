@@ -18,10 +18,11 @@ if __name__ == "__main__":
     session = Session()
 
     found = 0
-    for state in session.query(State).order_by(State.id).all():
+    for state in session.query(State):
         if sys.argv[4] == state.name:
             print("{}: {}".format(state.id, state.name))
             found = 1
+            break
     if found == 0:
         print("Not found")
     session.close()
