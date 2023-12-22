@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-# A script that list all states with a name that matches the argument provided
-# Takes arguments from the command line for username, pswd, name, and state
-# Uses MySQLdb and runs on local host at port 3306
+"""A script that list all states with a name that matches the argument provided
+ Takes arguments from the command line for username, pswd, name, and state
+ Uses MySQLdb and runs on local host at port 3306
+"""
 
 import MySQLdb
 import sys
