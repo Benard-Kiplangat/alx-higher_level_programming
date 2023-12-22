@@ -7,14 +7,16 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    conn = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    conn = MySQLdb.connect(user = "localhost", port=3306, user=sys.argv[1],
+                           passwd=sys.argv[2], db=sys.argv[3])
     cur = conn.cursor()
 
-    cur.execute(
-            "SELECT * FROM states \
-            WHERE BINARY name='{}' \
-            ORDER BY id ASC".format(sys.argv[4]))
-    for row in cur.fetchall():
-        print(row)
+    sql = "SELECT * FROM states WHERE name='{:s}'\
+    ORDER BY states.id".format(argv[4])
+    cur.execute(sql)
+    rows = cur.fetchall()
+    for row in rows:
+        if row[1] == argv[4]:
+            print(row)
     cur.close()
     conn.close()
