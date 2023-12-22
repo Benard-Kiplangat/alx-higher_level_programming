@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-# A script that list all cities that matches the given name from the arguments
-# Takes arguments from the command line for username, pswd, name, and state
-# Uses MySQLdb and runs on local host at port 3306
+"""
+A script that list all cities that matches the given name from the arguments
+Takes arguments from the command line for username, pswd, name, and state
+Uses MySQLdb and runs on local host at port 3306
+"""
 
 import MySQLdb
 import sys
+
 
 if __name__ == "__main__":
     conn = MySQLdb.connect(
