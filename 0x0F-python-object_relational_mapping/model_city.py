@@ -17,12 +17,6 @@ class City(Base):
         name: a column that will represent state names, not null
     """
     __tablename__ = "cities"
-    id = Column(Integer, primary_key=True)
-    name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
-
-class State(Base):
-    """class State"""
-    __tablename__ = 'states'
     id = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
