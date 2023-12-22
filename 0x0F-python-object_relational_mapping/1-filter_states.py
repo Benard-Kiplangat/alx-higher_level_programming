@@ -4,16 +4,20 @@
 # Uses MySQLdb and runs on local host at port 3306
 
 import MySQLdb
-import sys
+from sys import argv
+
 
 if __name__ == "__main__":
-    conn = MySQLdb.connect(
-            host="localhost", port=3306, user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3], charset="utf8")
+    conn = MySQLdb.connect(host="localhost", port=3306,
+                           user=argv[1], passwd=argv[2], db=argv[3])
     cur = conn.cursor()
 
     cur.execute("SELECT * FROM states ORDER BY id ASC")
-    [print(row) for row in cur.fetchall() if row[1][0] == "N"]
+    rows = cur.fetchall()
+
+    for row in rows:
+        if row[1][0] == 'N':
+            print(row)
+
     cur.close()
     conn.close()
