@@ -2,9 +2,9 @@
 
 const request = require('request');
 const argv = process.argv;
-const url = argv[2];
+const rurl = argv[2];
 
-request.get(url, (error, response, body) => {
+request.get(rurl, (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
@@ -13,7 +13,7 @@ request.get(url, (error, response, body) => {
     let count = 0;
 
     for (let i = 0; i < results.length; i++) {
-      for (let j = 0; j < results[i].characters.lenght; j++) {
+      for (let j = 0; j < results[i].characters.length; j++) {
         if (results[i].characters[j].includes('18')) {
           count = count + 1;
         }
