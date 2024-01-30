@@ -5,13 +5,12 @@ const args = process.argv;
 const requestURL = args[2];
 const list = {};
 
-request.get(requestURL, (errror, respose, body) => {
+request.get(requestURL, (error, respose, body) => {
   if (error) {
     console.log(error);
   } else {
     const data = JSON.parse(body);
     let user = 'default';
-
     for (let i = 0; i < data.length; i++) {
       if (data[i].completed === true) {
         if (!(data[i].userId in list)) {
