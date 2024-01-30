@@ -1,1 +1,13 @@
-#\!/usr/bin/python3 1-hbtn_header.py 2-post_email.py 3-error_code.py 4-hbtn_status.py 5-hbtn_header.py 6-post_email.py 7-error_code.py 8-json_api.py 10-my_github.py
+#!/usr/bin/python3
+"""
+A script that fetches https://intranet.hbtn.io/status using
+the package urllib. The body of the response must be displayed in tabs
+"""
+import urllib.request
+
+with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+    html = response.read()
+
+print('Body response:\n\t- type: {}'.format(type(html)))
+print('\t- content: {}'.format(html))
+print('\t- utf8 content: {}'.format(html.decode('utf-8')))
