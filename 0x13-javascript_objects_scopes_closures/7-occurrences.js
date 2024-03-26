@@ -1,14 +1,10 @@
-#!/usr/bin/node
-module.exports = {
-  nbOccurrences
-};
-
-function nbOccurrences (list, searchElement) {
-  let count = 0;
-
-  for (let i = 0; i < list.length; i++) {
-    count = list[i] === searchElement ? count + 1 : count;
-  }
-
-  return count;
-}
+#!/usr/bin/node 
+ exports.nbOccurences = function (list, searchElement) { 
+   let count = 0; 
+   for (let i = 0; i < list.length; i++) { 
+     if (list[i] === searchElement) { 
+       count++; 
+     } 
+   } 
+   return (count); 
+ };
